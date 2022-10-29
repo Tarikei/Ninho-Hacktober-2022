@@ -4,6 +4,7 @@ import array as arr
 i = 0
 debug = 0
 new_room = 1
+last_room = 1
 room = "sala"
 inventory = arr.array('I', [0, 0, 0, 0, 0, 0, 0, 0])
 storyline_array = arr.array('I', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
@@ -20,11 +21,46 @@ def get_action(id):
     global inventory
     global storyline_array
     global time
-
+    global last_room
     command = id[0]
     if (debug == 1):
         print("DEBUG: Comando:", command)
         print("DEBUG:", room_list)
+    if (command == "help"):
+        print("""     Comandos Disponiveis
+ir para:
+ Vai a um Quarto Disponivel
+   Quartos Disponiveis:
+ sala
+ quarto
+ cozinha
+ banheiro
+
+sair:
+ Fecha o programa
+
+tempo:
+ Olha o tempo
+
+inventario:
+ Mostra os itens no inventario
+
+usar:
+ um item que voce tem no inventario
+
+voltar:
+ Volta ao quarto em que voce estava
+""")
+
+    if (command == 'voltar'):
+        if last_room == 1:
+            print("Voce ainda nao foi para nenhum lugar")
+        else:
+            auxiliar = last_room
+            last_room = room
+            room = auxiliar
+            new_room = 1
+
 
     if (command == "ir"):
         if (id[1] == "para"):
