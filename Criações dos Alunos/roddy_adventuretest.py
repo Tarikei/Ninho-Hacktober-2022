@@ -204,5 +204,6 @@ inventory[0] = 1
 
 print("(insira uma intro para uma história aqui)")
 print("Por agora, tem uma porta trancada na sala.")
+print('Digite "help" para visualizar comandos disponiveis')
 print("E olha só, uma chave já no seu inventário. Easy mode.")
 inputMode()
