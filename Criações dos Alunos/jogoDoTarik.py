@@ -19,3 +19,5 @@ if escolha == "Aula":
 print("Fim da Aventura")
 
 print("Teste pra fazer o commit")
+
+print("Mais uma alteração"
